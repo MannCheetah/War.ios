@@ -10,24 +10,52 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         
-        ZStack {
-            Color(.green)
+        ZStack{
+            Image("background-cloth")
+                .resizable()
                 .ignoresSafeArea()
-            VStack {
-
-                Image("Leo")
-                    .resizable()
-                    .cornerRadius(150)
-                    .aspectRatio(contentMode: .fit)
-                    .padding(.all)
-                Text("President Leo")
-                    .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
-                    .fontWeight(.bold)
+            VStack{
+                Spacer()
+                Image("logo")
+                Spacer()
+                
+                HStack{
+                    Spacer()
+                    Image("card2")
+                    Spacer()
+                    Image("card3")
+                    Spacer()
+                }
+                Spacer()
+                Image("button")
+                Spacer()
+                HStack{
+                    Spacer()
+                    VStack{
+                        Text("You")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .padding(.bottom, 10.0)
+                        Text("0")
+                            .font(.largeTitle)
+                    }
+                    Spacer()
+                    VStack{
+                        Text("Her Other Dude")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .padding(.bottom, 10.0)
+                        
+                        Text("0")
+                            .font(.largeTitle)
+                    }
+                    Spacer()
+                }
+                .foregroundColor(.white)
+                
             }
             
-            
         }
-        
 
 
     }
