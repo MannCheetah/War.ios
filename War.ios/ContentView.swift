@@ -9,10 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var playaCard = "card14"
-    var playaScore = 0
-    var cpuCard = "card13"
-    var cpuScore = 0
+    @State var playaCard = "card14"
+    @State var playaScore = 0
+    @State var cpuCard = "card13"
+    @State var cpuScore = 0
     
     var body: some View {
         
@@ -76,7 +76,28 @@ struct ContentView: View {
     }
     
     func deal(){
-        print("Deal Cards")
+        // Randomize Player Card
+        let playaCardValue = Int.random(in: 2...14)
+        playaCard = "card" + String(playaCardValue)
+        
+        // Randomize Cpu Card
+        let cpuCardValue = Int.random(in: 2...14)
+        cpuCard = "card" + String(cpuCardValue)
+        
+        // Update Score
+        if playaCardValue > cpuCardValue {
+        //adds 1 to player score
+           
+                
+                playaScore += 1
+            }
+        else if cpuCardValue > playaCardValue{
+            cpuScore += 1
+        }
+        else{
+            //tie
+        }
+        
     }
 }
 
